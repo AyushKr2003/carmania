@@ -6,9 +6,8 @@ import 'package:carmania/nav pages/How_to_Rent.dart';
 import 'package:carmania/nav pages/Login.dart';
 import 'package:carmania/nav pages/Signup.dart';
 import 'package:carmania/nav pages/User_Page.dart';
+import 'package:carmania/payments/creadit_card_payment.dart';
 import 'package:flutter/material.dart';
-
-import 'nav pages/Contact_Us.dart';
 
 class NavigationDrawerWidget extends StatefulWidget {
   const NavigationDrawerWidget({Key? key}) : super(key: key);
@@ -88,6 +87,13 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                     text: 'Sign Up',
                     icon: Icons.person,
                     onClicked: () => selectedItem(context, 5),
+                  ),
+                  Divider(color: Colors.white, thickness: 1),
+                  const SizedBox(height: 16),
+                  buildMenuItem(
+                    text: 'Payment Page',
+                    icon: Icons.payment_outlined,
+                    onClicked: () => selectedItem(context, 6),
                   ),
                 ],
               ),
@@ -207,6 +213,12 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
       case 5:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (contex) => Signup(),
+        ));
+        break;
+
+      case 6:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (contex) => CardPayment(),
         ));
         break;
     }
