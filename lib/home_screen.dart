@@ -26,6 +26,7 @@ class _Home_SceenState extends State<Home_Sceen> {
     return Scaffold(
       endDrawer: NavigationDrawerWidget(),
       appBar: AppBar(
+        elevation: 0,
         title: Image.asset(
           'assets/logo.png',
           fit: BoxFit.contain,
@@ -152,7 +153,7 @@ class _Home_SceenState extends State<Home_Sceen> {
                         },
                       ),
                       ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: theme_color1),
+                        style: ElevatedButton.styleFrom(backgroundColor: theme_color1),
                         onPressed: () {},
                         child: Text('Search'),
                       ),
