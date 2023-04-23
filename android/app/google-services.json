@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "345524851099",
+    "project_id": "carmania-4d8d7",
+    "storage_bucket": "carmania-4d8d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345524851099:android:17bc41f4a5427b037f913e",
+        "android_client_info": {
+          "package_name": "com.example.carmania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345524851099-5t6ddq45u06b8n65sfefkf1d0e8l46c1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCltDLhRHzmsvFjkg5_ubidGJpq8_hHitE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345524851099-5t6ddq45u06b8n65sfefkf1d0e8l46c1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

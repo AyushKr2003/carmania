@@ -1,12 +1,13 @@
+import 'package:carmania/Auth%20Page/auth_page.dart';
+import 'package:carmania/Auth%20Page/logout.dart';
 import 'package:carmania/Theme/theme.dart';
 import 'package:carmania/nav pages/About_Us.dart';
 import 'package:carmania/nav pages/Category.dart';
 import 'package:carmania/nav pages/Contact_Us.dart';
 import 'package:carmania/nav pages/How_to_Rent.dart';
-import 'package:carmania/nav pages/Login.dart';
-import 'package:carmania/nav pages/Signup.dart';
 import 'package:carmania/nav pages/User_Page.dart';
 import 'package:carmania/payments/creadit_card_payment.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawerWidget extends StatefulWidget {
@@ -75,25 +76,15 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   ),
                   SizedBox(height: 24),
                   Divider(color: Colors.white, thickness: 1),
-                  SizedBox(height: 24),
                   const SizedBox(height: 16),
-                  buildMenuItem(
-                    text: 'Login',
-                    icon: Icons.login_outlined,
-                    onClicked: () => selectedItem(context, 4),
-                  ),
+                  Auth(),
                   const SizedBox(height: 16),
-                  buildMenuItem(
-                    text: 'Sign Up',
-                    icon: Icons.person,
-                    onClicked: () => selectedItem(context, 5),
-                  ),
                   Divider(color: Colors.white, thickness: 1),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Payment Page',
                     icon: Icons.payment_outlined,
-                    onClicked: () => selectedItem(context, 6),
+                    onClicked: () => selectedItem(context, 5),
                   ),
                 ],
               ),
@@ -116,7 +107,11 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
           padding: padding.add(EdgeInsets.symmetric(vertical: 40)),
           child: Row(
             children: [
-              CircleAvatar(radius: 30, backgroundImage: NetworkImage(urlImage)),
+              CircleAvatar(
+                radius: 30, //backgroundImage: NetworkImage(urlImage)
+                child: Image.asset('assets/carimg.png'),
+                backgroundColor: theme_color2,
+              ),
               SizedBox(width: 20),
               Column(
                 children: [
@@ -176,6 +171,20 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
     );
   }
 
+  Widget Auth(){
+    return (FirebaseAuth.instance.currentUser != null) ? buildMenuItem(
+      text: 'Logout',
+      icon: Icons.logout_outlined,
+      onClicked: () => selectedItem(context, 6),
+    ) :
+    buildMenuItem(
+      text: 'Login/SignUp',
+      icon: Icons.login_outlined,
+      onClicked: () => selectedItem(context, 4),
+    )
+    ;
+  }
+
   void selectedItem(BuildContext contex, int index) {
     Navigator.of(context).pop();
 
@@ -206,19 +215,19 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
 
       case 4:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (contex) => Login(),
+          builder: (contex) => AuthPage(),
         ));
         break;
 
       case 5:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (contex) => Signup(),
+          builder: (contex) => CardPayment(),
         ));
         break;
 
       case 6:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (contex) => CardPayment(),
+          builder: (contex) => Logout(),
         ));
         break;
     }
