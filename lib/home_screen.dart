@@ -92,7 +92,7 @@ class _Home_SceenState extends State<Home_Sceen> {
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          labelText: 'Search your location',
+                          hintText: 'Search your location',
                           fillColor: Colors.white,
                         ),
                       ),
@@ -107,7 +107,7 @@ class _Home_SceenState extends State<Home_Sceen> {
                       TextFormField(
                         controller: _pickdate,
                         decoration: InputDecoration(
-                          labelText: 'dd/mm/yyyy',
+                          hintText: 'dd/mm/yyyy',
                         ),
                         onTap: () async{
                           DateTime? pickedate = await showDatePicker(
@@ -134,7 +134,7 @@ class _Home_SceenState extends State<Home_Sceen> {
                       TextFormField(
                         controller: _returndate,
                         decoration: InputDecoration(
-                          labelText: 'dd/mm/yyyy',
+                          hintText: 'dd/mm/yyyy',
                           fillColor: Colors.white,
                         ),
                         onTap: () async{
@@ -198,144 +198,146 @@ class _Home_SceenState extends State<Home_Sceen> {
                 ),
               ),
               SizedBox(height: 100),
-              Column(
-                children: [
-                  Text(
-                    'HOW IT WORK',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 15,
-                      letterSpacing: 0.2,
-                      color: Color.fromRGBO(172, 174, 180, 1),
+              Container(
+                child: Column(
+                  children: [
+                    Text(
+                      'HOW IT WORK',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        letterSpacing: 0.2,
+                        color: Color.fromRGBO(172, 174, 180, 1),
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Rent your desired car with following 3 working steps',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.3,
-                      fontSize: 21,
+                    SizedBox(
+                      height: 10,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 20),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 200,
-                          child: Column(
-                            children: [
-                              Icon(
-                                Icons.location_on_sharp,
-                                size: 75,
-                                color: theme_color1,
-                              ),
-                              Text(
-                                'Pick Your Loaction',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 0.3,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              Text(
-                                'Choose your loaction and find your best car',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15,
-                                  letterSpacing: 0.2,
-                                  color: Color.fromRGBO(172, 174, 180, 1),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          height: 50,
-                          child: DottedLine(
-                            direction: Axis.horizontal,
-                            lineLength: 100,
-                            dashColor: Color.fromRGBO(112, 112, 112, 1),
-                          ),
-                        ),
-                        Container(
-                          width: 200,
-                          child: Column(
-                            children: [
-                              Icon(
-                                Icons.calendar_month_sharp,
-                                size: 75,
-                                color: theme_color1,
-                              ),
-                              Text(
-                                'Pick-up Date/Time',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 0.3,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              Text(
-                                'Select your pick up date and time to book your car.',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15,
-                                  letterSpacing: 0.2,
-                                  color: Color.fromRGBO(172, 174, 180, 1),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          height: 50,
-                          child: DottedLine(
-                            direction: Axis.horizontal,
-                            lineLength: 100,
-                            dashColor: Color.fromRGBO(112, 112, 112, 1),
-                          ),
-                        ),
-                        Container(
-                          width: 200,
-                          child: Column(
-                            children: [
-                              Icon(
-                                Icons.car_rental,
-                                size: 75,
-                                color: theme_color1,
-                              ),
-                              Text(
-                                'Book your Desired Car',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 0.3,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              Text(
-                                'We will deliver it directly to you.',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15,
-                                  letterSpacing: 0.2,
-                                  color: Color.fromRGBO(172, 174, 180, 1),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                    Text(
+                      'Rent your desired car with following 3 working steps',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.3,
+                        fontSize: 21,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                    SizedBox(height: 20),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 200,
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.location_on_sharp,
+                                  size: 75,
+                                  color: theme_color1,
+                                ),
+                                Text(
+                                  'Pick Your Loaction',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.3,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Text(
+                                  'Choose your loaction and find your best car',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    letterSpacing: 0.2,
+                                    color: Color.fromRGBO(172, 174, 180, 1),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 50,
+                            child: DottedLine(
+                              direction: Axis.horizontal,
+                              lineLength: 100,
+                              dashColor: Color.fromRGBO(112, 112, 112, 1),
+                            ),
+                          ),
+                          Container(
+                            width: 200,
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.calendar_month_sharp,
+                                  size: 75,
+                                  color: theme_color1,
+                                ),
+                                Text(
+                                  'Pick-up Date/Time',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.3,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Text(
+                                  'Select your pick up date and time to book your car.',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    letterSpacing: 0.2,
+                                    color: Color.fromRGBO(172, 174, 180, 1),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 50,
+                            child: DottedLine(
+                              direction: Axis.horizontal,
+                              lineLength: 100,
+                              dashColor: Color.fromRGBO(112, 112, 112, 1),
+                            ),
+                          ),
+                          Container(
+                            width: 200,
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.car_rental,
+                                  size: 75,
+                                  color: theme_color1,
+                                ),
+                                Text(
+                                  'Book your Desired Car',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.3,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Text(
+                                  'We will deliver it directly to you.',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    letterSpacing: 0.2,
+                                    color: Color.fromRGBO(172, 174, 180, 1),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: 100),
               Column(

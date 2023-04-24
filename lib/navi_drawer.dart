@@ -1,10 +1,10 @@
 import 'package:carmania/Auth%20Page/auth_page.dart';
 import 'package:carmania/Auth%20Page/logout.dart';
 import 'package:carmania/Theme/theme.dart';
+import 'package:carmania/home_screen.dart';
 import 'package:carmania/nav pages/About_Us.dart';
 import 'package:carmania/nav pages/Category.dart';
 import 'package:carmania/nav pages/Contact_Us.dart';
-import 'package:carmania/nav pages/How_to_Rent.dart';
 import 'package:carmania/nav pages/User_Page.dart';
 import 'package:carmania/payments/creadit_card_payment.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,6 +26,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
     final email = 'CarManiaEmail.com';
     final urlImage =
         'https://images.unsplash.com/photo-1630312830491-b9b09e74bafe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
+
 
     return Drawer(
       child: Material(
@@ -54,7 +55,9 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   buildMenuItem(
                     text: 'How To Rent',
                     icon: Icons.question_mark_outlined,
-                    onClicked: () => selectedItem(context, 0),
+                    onClicked: (){
+                      Navigator.pop(context);
+                    },
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
@@ -191,8 +194,9 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
     switch (index) {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (contex) => HowToRent(),
+          builder: (contex) => Home_Sceen(),
         ));
+
         break;
 
       case 1:
